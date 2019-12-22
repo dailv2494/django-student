@@ -1,0 +1,21 @@
+<table border="1">
+  <tr>
+    <th>STT</th>
+    <th>Ma hoc sinh</th>
+    <th>Ho ten</th>
+    <th>Chuc Nang</th>
+  </tr>
+  {% for st in students %}
+  <tr>
+    <td>{{ forloop.counter }}</td>
+    <td>{{ st.studentNo }}</td>
+    <td>{{ st.name }}</td>
+    <td>
+      <a href="/update_student/{{st.id}}">Chinh Sua</a>
+      <a href="{% url 'delete-student' st.id %}">Xoa</a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+<a href='{% url "create-student" %}'> them moi hoc sinh</a>
+
